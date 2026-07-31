@@ -27,36 +27,35 @@
     justify-content: center;
   }
   .wrap { max-width: 420px; padding: 24px; text-align: center; }
-  .suits {
-    letter-spacing: 10px;
-    color: rgba(255,255,255,0.3);
-    font-size: 0.9em;
-    margin-bottom: 14px;
-  }
   h1 {
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
     font-size: 2em;
     font-weight: 700;
     letter-spacing: 1px;
-    margin: 0 0 32px;
+    margin: 0;
     color: #f2f2f2;
+  }
+  .suits-sub {
+    margin: 14px 0 36px;
+    letter-spacing: 3px;
+    font-size: 0.68em;
+    color: rgba(255,255,255,0.22);
   }
   .links { display: flex; flex-direction: column; gap: 14px; }
   a.card {
     display: block;
     border: 1px solid rgba(var(--cba-rgb), 0.28);
-    background: rgba(var(--cba-rgb), 0.06);
     border-radius: 12px;
     padding: 16px 20px;
     color: #f0f0f0;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.02em;
-    transition: background 0.15s, border-color 0.15s;
+    transition: border-color 0.15s, color 0.15s;
   }
   a.card:hover {
-    background: rgba(var(--cba-rgb), 0.12);
-    border-color: rgba(var(--cba-rgb), 0.5);
+    border-color: rgba(var(--cba-rgb), 0.6);
+    color: var(--cba);
   }
   a.card span {
     display: block;
@@ -75,8 +74,8 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="suits">&#9824; &#9829; &#9827; &#9830;</div>
   <h1>Simply Cribbage</h1>
+  <div class="suits-sub">&#9824;&ensp;&#9829;&ensp;&#9827;&ensp;&#9830;</div>
   <div class="links">
     <a class="card" href="privacy.html">Privacy Policy<span>What data we collect (none)</span></a>
     <a class="card" href="support.html">Support<span>FAQ and how to reach us</span></a>
