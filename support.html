@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simply Cribbage — Support</title>
+<style>
+  :root {
+    --cba: #c79a3d;
+    --cba-rgb: 199, 154, 61;
+    --bg-top: #262626;
+    --bg-bottom: #111111;
+    --body: #d0d0d0;
+    --dim: #8a8a8a;
+    --dimmer: #6e6e6e;
+    --rule: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #1a1a1a;
+    background-image: radial-gradient(ellipse at 50% 20%, var(--bg-top) 0%, var(--bg-bottom) 72%);
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header { text-align: center; margin-bottom: 40px; }
+  .suits {
+    letter-spacing: 10px;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.9em;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 2.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 6px;
+    color: #f2f2f2;
+  }
+  .kicker {
+    font-size: 0.78em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cba);
+    font-weight: 600;
+  }
+  .intro {
+    text-align: center;
+    color: var(--dim);
+    font-size: 0.98em;
+    max-width: 460px;
+    margin: 18px auto 0;
+  }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid rgba(var(--cba-rgb), 0.28);
+    background: rgba(var(--cba-rgb), 0.06);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 36px 0 44px;
+    text-align: center;
+    flex-direction: column;
+  }
+  .contact-card .label {
+    font-size: 0.72em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cba);
+    font-weight: 700;
+  }
+  .contact-card a {
+    font-size: 1.05em;
+    font-weight: 600;
+  }
+  section {
+    border-top: 1px solid var(--rule);
+    padding: 26px 0;
+  }
+  section:last-of-type { border-bottom: 1px solid var(--rule); }
+  h2 {
+    font-size: 0.74em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(var(--cba-rgb), 0.75);
+    margin: 0 0 16px;
+  }
+  .faq-item { margin-bottom: 22px; }
+  .faq-item:last-child { margin-bottom: 0; }
+  .q {
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 6px;
+    font-size: 0.98em;
+  }
+  .a { color: var(--body); font-size: 0.96em; margin: 0; }
+  a { color: var(--cba); text-decoration: none; border-bottom: 1px solid rgba(var(--cba-rgb), 0.35); }
+  a:hover { border-bottom-color: var(--cba); }
+  code {
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.92em;
+    color: #e6e6e6;
+  }
+  footer {
+    text-align: center;
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8em;
+    color: var(--dimmer);
+    letter-spacing: 1px;
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 44px 18px 72px; }
+    h1 { font-size: 1.7em; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="suits">&#9824; &#9829; &#9827; &#9830;</div>
+    <div class="kicker">Simply Cribbage</div>
+    <h1>Support</h1>
+    <p class="intro">Heads-up Cribbage against an AI that plays to win — fully offline, no accounts, no ads. If something's not working right, you're in the right place.</p>
+  </header>
+
+  <div class="contact-card">
+    <span class="label">Need help directly?</span>
+    <a href="mailto:REPLACE_WITH_YOUR_EMAIL">REPLACE_WITH_YOUR_EMAIL</a>
+  </div>
+
+  <section>
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="q">The on-screen keyboard doesn't appear when I try to enter a name</div>
+      <p class="a">This almost always means a third-party keyboard (Grammarly, Gboard, SwiftKey, etc.) is set as your default and is failing to load — a known iOS limitation where apps have no ability to select or override the active keyboard. Tap the globe key to switch to Apple's own keyboard, or check <strong>Settings → General → Keyboard</strong>. If nothing's typed after a few seconds, the game will continue on its own with a default name.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Is my data private? Does the app track me?</div>
+      <p class="a">Yes, it's private — the app makes zero network requests, has no accounts or analytics, and everything stays on your device. See the <a href="privacy.html">Privacy Policy</a> for the full detail.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">How do I reset my stats?</div>
+      <p class="a">Open <strong>Stats</strong> from the in-game controls, then use the reset option there. You can reset just your own stats, another player's, or everyone's at once.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Face ID / Touch ID isn't unlocking the app</div>
+      <p class="a">App Lock relies entirely on iOS's own Face ID / Touch ID system — the app never handles biometrics directly. If unlocking fails, check <strong>Settings → Face ID &amp; Passcode</strong> (or Touch ID &amp; Passcode) to confirm Simply Cribbage has permission, and that Face ID / Touch ID is working elsewhere on your device.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">I found a bug, or have a suggestion</div>
+      <p class="a">Please reach out at the address above — include the app version (found on the New Game screen or in About, e.g. <code>2.2.96</code>) and a quick description of what happened. Screenshots help a lot.</p>
+    </div>
+
+  </section>
+
+  <footer>&#9824;&ensp;&#9829;&ensp;&#9827;&ensp;&#9830;</footer>
+
+</div>
+</body>
+</html>

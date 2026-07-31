@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simply Cribbage — Privacy Policy</title>
+<style>
+  :root {
+    --cba: #c79a3d;
+    --cba-rgb: 199, 154, 61;
+    --bg-top: #262626;
+    --bg-bottom: #111111;
+    --body: #d0d0d0;
+    --dim: #8a8a8a;
+    --dimmer: #6e6e6e;
+    --rule: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #1a1a1a;
+    background-image: radial-gradient(ellipse at 50% 20%, var(--bg-top) 0%, var(--bg-bottom) 72%);
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .suits {
+    letter-spacing: 10px;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.9em;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 2.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 6px;
+    color: #f2f2f2;
+  }
+  .kicker {
+    font-size: 0.78em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cba);
+    font-weight: 600;
+  }
+  .updated {
+    margin-top: 14px;
+    font-size: 0.82em;
+    color: var(--dimmer);
+  }
+  .tldr {
+    border: 1px solid rgba(var(--cba-rgb), 0.28);
+    background: rgba(var(--cba-rgb), 0.06);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 44px;
+    font-size: 0.98em;
+  }
+  .tldr .label {
+    font-size: 0.72em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cba);
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+  }
+  section {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0;
+  }
+  section:last-of-type {
+    border-bottom: 1px solid var(--rule);
+  }
+  h2 {
+    font-size: 0.74em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(var(--cba-rgb), 0.75);
+    margin: 0 0 12px;
+  }
+  p { margin: 0 0 14px; color: var(--body); font-size: 0.98em; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; color: var(--body); }
+  li:last-child { margin-bottom: 0; }
+  strong { color: #f0f0f0; font-weight: 600; }
+  a { color: var(--cba); text-decoration: none; border-bottom: 1px solid rgba(var(--cba-rgb), 0.35); }
+  a:hover { border-bottom-color: var(--cba); }
+  footer {
+    text-align: center;
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8em;
+    color: var(--dimmer);
+    letter-spacing: 1px;
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 44px 18px 72px; }
+    h1 { font-size: 1.7em; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="suits">&#9824; &#9829; &#9827; &#9830;</div>
+    <div class="kicker">Simply Cribbage</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: July 31, 2026</div>
+  </header>
+
+  <div class="tldr">
+    <span class="label">The short version</span>
+    Simply Cribbage collects nothing. There are no accounts, no servers, and no network connection of any kind. Everything the app knows about your games stays on your device, permanently, and is never sent anywhere.
+  </div>
+
+  <section>
+    <h2>What We Collect</h2>
+    <p><strong>Nothing.</strong> Simply Cribbage does not collect, transmit, or have access to any personal information, usage data, or analytics. The app makes zero network requests — it works identically with Wi-Fi and cellular data both switched off.</p>
+    <p>There are no user accounts, no sign-in, no advertising identifiers, no third-party SDKs, and no crash- or analytics-reporting services embedded in the app.</p>
+  </section>
+
+  <section>
+    <h2>What Stays On Your Device</h2>
+    <p>To make the game work across sessions, the app stores a small amount of information locally, using standard iOS on-device storage:</p>
+    <ul>
+      <li>The name you enter, and any custom name given to the AI opponent</li>
+      <li>Win/loss records, streaks, and hand-history statistics</li>
+      <li>Game settings — difficulty, sound, pacing, and display preferences</li>
+      <li>Whether App Lock is enabled, and your chosen auto-lock timing</li>
+    </ul>
+    <p>None of this ever leaves your device. Deleting the app deletes this data along with it.</p>
+  </section>
+
+  <section>
+    <h2>Face ID &amp; Touch ID</h2>
+    <p>If you enable App Lock, authentication is handled entirely by iOS itself, using Apple's on-device Face ID or Touch ID hardware. Simply Cribbage never sees, stores, or has any access to your biometric data — the app only ever receives a yes/no result from iOS.</p>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>Because the app collects no data from anyone, this applies equally to children. Simply Cribbage does not knowingly collect personal information from any user, of any age.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>If this policy ever changes — for example, if a future version of the app adds an optional online feature — this page will be updated first, with the "last updated" date above reflecting the change. Given the app's fully offline design, we don't expect that to happen.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions about this policy can be sent to <a href="mailto:REPLACE_WITH_YOUR_EMAIL">REPLACE_WITH_YOUR_EMAIL</a>.</p>
+  </section>
+
+  <footer>&#9824;&ensp;&#9829;&ensp;&#9827;&ensp;&#9830;</footer>
+
+</div>
+</body>
+</html>
