@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simply Cribbage — Change Log</title>
+<style>
+  :root {
+    --cba: #c79a3d;
+    --cba-rgb: 199, 154, 61;
+    --bg-top: #262626;
+    --bg-bottom: #111111;
+    --body: #d0d0d0;
+    --dim: #8a8a8a;
+    --dimmer: #6e6e6e;
+    --rule: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #1a1a1a;
+    background-image: radial-gradient(ellipse at 50% 20%, var(--bg-top) 0%, var(--bg-bottom) 72%);
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .suits {
+    letter-spacing: 10px;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.9em;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 2.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 6px;
+    color: #f2f2f2;
+  }
+  .kicker {
+    font-size: 0.78em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cba);
+    font-weight: 600;
+  }
+  .updated {
+    margin-top: 14px;
+    font-size: 0.82em;
+    color: var(--dimmer);
+  }
+  .tldr {
+    margin-bottom: 44px;
+    font-size: 0.98em;
+  }
+  .tldr .label {
+    font-size: 0.72em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cba);
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+  }
+  section {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0;
+  }
+  section:last-of-type {
+    border-bottom: 1px solid var(--rule);
+  }
+  .cl-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 1.02em;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #f0f0f0;
+    margin: 0;
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+  }
+  .cl-ver {
+    color: var(--cba);
+    font-weight: 700;
+  }
+  .cl-date {
+    font-size: 0.76em;
+    color: var(--dimmer);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  p { margin: 0 0 14px; color: var(--body); font-size: 0.94em; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 14px; padding-left: 1.2em; }
+  li { margin-bottom: 8px; color: var(--body); font-size: 0.94em; }
+  li:last-child { margin-bottom: 0; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.92em;
+    color: #e8c887;
+    background: rgba(255,255,255,0.06);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  strong { color: #f0f0f0; font-weight: 600; }
+  a { color: var(--cba); text-decoration: none; border-bottom: 1px solid rgba(var(--cba-rgb), 0.35); }
+  a:hover { border-bottom-color: var(--cba); }
+  @media (max-width: 480px) {
+    .wrap { padding: 44px 18px 72px; }
+    h1 { font-size: 1.7em; }
+    .cl-head { flex-direction: column; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="suits">&#9824; &#9829; &#9827; &#9830;</div>
+    <div class="kicker">Simply Cribbage</div>
+    <h1>Change Log</h1>
+    <div class="updated">Last updated: August 1, 2026 &middot; App version 2.2.99</div>
+  </header>
+
+  <div class="tldr">
+    <span class="label">The short version</span>
+    Every release of Simply Cribbage, newest first, with what actually changed &mdash; not just marketing copy. Most releases are small fixes and polish; that's normal for an actively-maintained app.
+  </div>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.99</span> Personalize-prompt UX overhaul + modern card-face blur fix</h2>
+      <div class="cl-date">August 1, 2026</div>
+    </div>
+    <ul>
+    <li>New Game: tap anywhere to skip the opponent-naming prompt instantly</li>
+    <li>New Settings &gt; Advanced &gt; Custom Opponent Name toggle (off by default) to skip that prompt entirely</li>
+    <li>Picking a difficulty now hides the other two instead of just dimming them</li>
+    <li>Last-played difficulty now correctly stays pre-highlighted across games (fixed a timer that was silently wiping this out after 1 second)</li>
+    <li>Longer "(change?)" window on the returning-player auto-start message (1.5s &rarr; 3s), simplified its copy</li>
+    <li>"Start Game" button restyled to match the rest of the game's borderless modal convention</li>
+    <li>Fixed blurry pips on Modern-style Ace-10 card faces (stray drop-shadow filter, WebKit-specific rendering quirk)</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.98</span> Acknowledgements + Open Source license section</h2>
+      <div class="cl-date">July 31, 2026</div>
+    </div>
+    <p>Added an Acknowledgements section to the About page crediting the tools and people behind this app's development (Claude Code/Anthropic, Xcode/Apple, GitHub, and David Bellot's open-source SVG playing cards that the classic card artwork is built on).</p>
+    <p>Also added an Open Source section with the full LGPL-2.1 license text for the card artwork, satisfying its attribution/license-availability terms — collapsed by default, expands in the app's normal body font (not the raw file's monospace layout, since only the wording itself is required to stay verbatim, not the formatting). Content integrity verified word-for-word against the original license file before and after reflowing.</p>
+    <p>Updated the What's New section to cover this and the previous release.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.97</span> Add "Built to Last" section to the About page</h2>
+      <div class="cl-date">July 31, 2026</div>
+    </div>
+    <p>New section between Privacy and Fair Play, reinforcing the app's zero-network design: no server, subscription, or account behind it, so nothing on our end can go down, expire, or get shut off — as long as the device can run it, the game runs. Same copy also added to the hosted privacy-policy page for consistency.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.96</span> Name-driven crib-owner tag, quieter name box, longer timer</h2>
+      <div class="cl-date">July 31, 2026</div>
+    </div>
+    <p>Game Review's Hand-by-Hand table (and the in-game running history table) showed a generic "(Y)"/"(C)" tag next to crib points — inconsistent with the rest of the app, which always refers to the opponent by their given or custom name, never "CPU". Both now use the actual first initial of whoever's name is in play instead.</p>
+    <p>Also: removed the redundant "(optional)" placeholder text from the "Give the opponent a different name?" input — the label above and the "Leave blank to keep..." hint below already say as much — and bumped that prompt's blank-path auto-continue timer by 1750ms (5000ms &rarr; 6750ms) for more breathing room before it defaults.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.95</span> Fix AVAudioSession main-thread hang risk</h2>
+      <div class="cl-date">July 31, 2026</div>
+    </div>
+    <p>Xcode flagged 3 "AVAudioSession Hang Risk" warnings during a real on-device debug session (iPadOS 27 Beta 2) — all synchronous setActive(true) calls made directly on the main thread (configureAudioSession, appDidBecomeActive, and the webView(didFinish:) delegate). Fixed by dispatching each call onto a background queue instead, which is the standard fix for this warning and works at the project's iOS 18.2 deployment target — an earlier attempt using the newer async activate() API turned out to require iOS 27, so it was replaced with this version-safe approach. No behavior change; verified via a clean Xcode build with no errors or warnings.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.94</span> In-app "What's New" section on the About page</h2>
+      <div class="cl-date">July 31, 2026</div>
+    </div>
+    <p>Added a curated, player-facing release-notes section near the top of the About modal, grouped by version (newest first). This isn't a full changelog — only genuinely player-visible changes get an entry (a new feature, a visible redesign, a pacing/feel change), skipping internal bug fixes and refactors. Seeded with the last few notable updates: the count-modal Detail-view redesign (2.2.93), slower/more natural pacing (2.2.88), and custom opponent naming (2.2.83).</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.93</span> Detail-view redesign for count modals + crib-card visibility</h2>
+      <div class="cl-date">July 30, 2026</div>
+    </div>
+    <p>Clicking "Detail" on the self-count/muggins-challenge modals now replaces the whole modal with the full scoring breakdown (hiding the now-irrelevant entry/numpad/feedback) instead of appending it below a still-cluttered view; the existing Continue (&gt;) button advances to the next count or hand exactly as before.</p>
+    <p>Restored the crib's cards in both count modals — unlike a player's own hand, the crib is never shown face-up anywhere else on the table, so without them the crib count was being judged blind. Card rendering stays hand-only-hidden/crib-shown, matching where the information is actually otherwise available.</p>
+    <p>Surfaced and fixed a real regression this uncovered: leaving a count step via Detail without returning to Summary first left the entry/feedback/claim elements permanently hidden for the next step, since their inline display state was never reset on the next showManualCount/showDealerCount call — fixed by resetting it explicitly each round.</p>
+    <p>Also fixed a genuine content-overflow bug the restored crib cards exposed (up to 130px on content-heavy hands): rather than keep shrinking padding to fight a fixed box height, extended the count-modal's box to use the full available screen height (encroaching into the player-hand area, which is fine since nothing there needs to be interacted with while the modal is open) and made the modal backdrop solid black to match, then let the box size to its actual content instead of always stretching to fill the taller ceiling.</p>
+    <p>Verified live across typical and worst-case (quad-five) hands in both modals, all four modal states (pre-submit, post-submit, Detail, post-Detail-exit-without-Summary), plus a clean 40-game pressure-test regression pass.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.92</span> Keyboard-fallback safety net + quieter personalize screen</h2>
+      <div class="cl-date">July 30, 2026</div>
+    </div>
+    <p>Real-device testing traced a "keyboard never appears" report to a third-party keyboard extension (Grammarly) hanging on this app's name field — an iOS platform limitation (apps can't select/override the active keyboard), not a game bug. Since a first-time player with no saved-name pill would otherwise be stuck at the very first screen with no way to proceed, added an idle-timeout fallback to name entry (mirroring the existing difficulty/personalize screen's pattern): if nothing's typed or tapped for 25s, show a brief note and continue with a default name after 12s. Added a matching "Keyboard Not Appearing?" section to the in-app About page for permanent reference.</p>
+    <p>Also toned down the difficulty-selection personalize prompt, which read as loud/bright relative to the rest of the screen: dimmed the label to match the existing quiet italic treatment used elsewhere in this exact same UI slot, replaced the bright bordered "No" pill with a "Yes ›" text link (input field now only appears once tapped, editing an already-named opponent still shows it immediately as before), and removed stray underlines.</p>
+    <p>Verified live end-to-end (idle-timeout hint + auto-continue, Yes-reveal + focus, existing-name edit path unaffected, About page rendering) plus a clean 150-game pressure-test regression pass. Device-tested and confirmed working.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.91</span> Fix Mac app New Game screen content clipping</h2>
+      <div class="cl-date">July 30, 2026</div>
+    </div>
+    <p>The tablet media query (min-width:700px) caps setup/settings/stats/etc. modal boxes at a percentage of viewport height tuned for iPad's fixed portrait dimensions. The Mac app's window is arbitrarily resizable and much shorter relative to its width than iPad ever is, so that same percentage left far less usable room, silently pushing content below the fold on the welcome screen, the rotating facts, and the difficulty/personalize screen.</p>
+    <p>Give the Mac target (html.mac-app) its own override using nearly the full window height instead of a fixed vh fraction, since that's the actual constraint that matters. Verified zero overflow across the welcome screen, all 40 rotating facts, and the difficulty/personalize screen; confirmed iPad is unaffected since the override only applies under the Mac-only flag.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.90</span> Fix dead message-level default, fix fresh-install self-registration</h2>
+      <div class="cl-date">July 30, 2026</div>
+    </div>
+    <p>Message level's "off for Hard/Pro" default was baked into localStorage on first boot before any difficulty was ever chosen, permanently short-circuiting the derivation on every future launch. setDifficulty() now re-derives it (unpersisted) whenever the player hasn't made an explicit choice, so it keeps adapting to difficulty until they do.</p>
+    <p>Defaulting PLAYER_NAME to "Alex" also caused a genuinely fresh install to silently register "Alex" into the recent-players list before the user typed or clicked anything, showing "or enter another name" with a pre-selected pill on an untouched device. Boot-time player-list bookkeeping now only runs when a name was actually stored.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.89</span> Fix personalize-screen clipping on iPhone</h2>
+      <div class="cl-date">July 30, 2026</div>
+    </div>
+    <p>User reported the lower portion of the New Game "select a difficulty" screen was clipped on iOS once a difficulty was picked. Root cause: the two unselected bios stay in the layout (just dimmed via opacity), still holding their full 140px height, and the new per-difficulty personalize prompt (name field + Start button) pushed total content ~100-155px past the visible area on phone widths, with no visual cue that the box was scrollable.</p>
+    <p>Fixed by collapsing the two dimmed bios to just their pips+name row once a difficulty is picked, freeing enough space that everything fits without scrolling. Scoped to max-width:699px so the iPad's side-by-side layout is untouched — confirmed unaffected directly.</p>
+    <p>User-tested and confirmed working on both iPhone and iPad.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.88</span> Rework game-speed pacing (backlog #37)</h2>
+      <div class="cl-date">July 30, 2026</div>
+    </div>
+    <p>Beta testers reported the game feels rushed even at "slow" speed. Root cause was two separate problems: several of the most-repeated pacing delays (the pause after every peg play, the post-31 reset, the discard&rarr;cut transition, the auto-discard confirm) were hardcoded and never responded to the speed setting at all; and even where the setting was applied, "slow" was just the 1x unaccelerated baseline, never actually tuned to feel patient.</p>
+    <p>Fixed both: routed the hardcoded delays through _gs() (mostly via a single fix inside the shared _scheduleAfterPeg() helper), and shifted the whole speed scale one notch more patient — {slow:1, normal:0.6, fast:0.3} &rarr; {slow:1.5, normal:1, fast:0.6}. Today's "normal" becomes the new "fast," today's "slow" becomes the new "normal," and "slow" is a genuinely new, more patient tier. Since GAME_SPEED already defaults to "slow," every new install gets this pacing by default.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.87</span> Fix native launch-screen mismatch, Xcode 27-beta build errors</h2>
+      <div class="cl-date">July 29, 2026</div>
+    </div>
+    <p>Investigating the App Launch modal jitter (backlog item 35): user found the real transition was the native iOS LaunchScreen handing off to the SwiftUI splash view, not the web-side sequence. The SwiftUI splash rendered the logo at 350pt wide vs. the native LaunchScreen's actual 398x73pt asset, and ignored the safe area where the native screen respects it — a real, measurable mismatch causing a visible pop at handoff. Fixed by rendering the logo at its natural size and scoping ignoresSafeArea() to just the black background layer, so both screens render identically.</p>
+    <p>Also fixed two build failures surfaced while testing on the just-updated Xcode (for macOS 27 Beta 2 support):</p>
+    <ul>
+    <li>AppIcon.appiconset/Contents.json had every iPad icon slot mapped to a file one scale-step too large (e.g. the 1x slot fed the @2x file). Corrected the mappings and dropped the three obsolete 1x iPad entries (deployment target is iOS 18.2; no such device exists).</li>
+    <li>The "Copy Card Assets" postBuildScript's recursive cp of the whole assets/ tree has no declared Input Files, which newer Xcode's Run Script sandboxing now blocks (Sandbox: cp deny file-read-data). Set ENABLE_USER_SCRIPT_SANDBOXING=NO for the target rather than enumerating every asset file as an input.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.86</span> Add per-difficulty message defaults, fix sound-pill bug</h2>
+      <div class="cl-date">July 29, 2026</div>
+    </div>
+    <p>Fix: setMessageLevel() cleared msg-active on every .msg-btn-styled toggle in Settings (sound, auto-cut/deal/discard/continue, learn mode, adaptive AI, self-score, board visibility), not just the message-level buttons, since it selected by the shared class instead of the mlevel dataset. Scoped to [data-mlevel], matching the existing [data-soundlevel] pattern.</p>
+    <p>New defaults (only applied when nothing's been explicitly chosen): message level off for Hard/Pro (Easy stays full), player name "Alex", game speed "slow", and a 1m App Lock timeout set at the moment of biometric consent (never bypassing the consent flow itself). Also reworded the name-entry divider now that "Alex" shows as a default pill: "or enter your name" &rarr; "or enter another name".</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.85</span> Add boot-sequence diagnostic logging</h2>
+      <div class="cl-date">July 28, 2026</div>
+    </div>
+    <p>Investigating a real on-device report: the App Launch modal jitters briefly (&lt;500ms) on a fresh install before settling. Couldn't reproduce true cold-install timing in the dev preview (no first-JIT penalty, no first-install disk I/O), so added lightweight timing instrumentation instead of guessing at a fix.</p>
+    <p>Web side: _bootDiagLog() records each boot milestone (fonts.ready, first/second fit pass, gameReady send) to localStorage, surfaced in the About modal's debug panel as "Boot Diagnostics" and included in Copy Debug Log.</p>
+    <p>Native side: ContentView.swift logs the splash lifecycle (onAppear, minHoldElapsed, gameLoaded received, actual dismiss, safety fallback) to the Xcode console with relative timestamps, so the two timelines can be cross-referenced to see whether the splash crossfade overlaps with the web side still mid-layout.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.84</span> Fix personalize-prompt double-launch bug, add decline pill</h2>
+      <div class="cl-date">July 27, 2026</div>
+    </div>
+    <p>Fix: the personalize-name input stayed in the DOM after the setup modal visually closed, so a stray blur event could re-arm the fallback timer and fire a second setupStartGame()/_launchNewGame() call mid-game, racing the first (the "several things fired at once" symptom on fresh install). Added a _cpuNameResolved guard so the whole personalize flow can only resolve once per wizard cycle.</p>
+    <p>Also: blank-path auto-start timer 2.5s &rarr; 5s; added a touch-friendly "No" pill so players can explicitly decline personalizing instead of only being able to wait out the timer; and fixed a related gap where clearing an existing custom name during the "(change?)" edit flow never actually removed it from storage (setCustomCpuName is now always called, not only when the submitted value is non-blank).</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.83</span> Add per-difficulty opponent naming, fix bios leak bug</h2>
+      <div class="cl-date">July 27, 2026</div>
+    </div>
+    <p>Fix: renaming the AI opponent from Settings was overwriting all three difficulty-selection bios (Nob/Noddy/Nubb) and win/loss records with the one custom name, instead of only the currently active difficulty.</p>
+    <p>Replace the single global custom-name override with a name scoped to each (player, difficulty) pair, offered once right after picking a difficulty in the New Game wizard instead of via Settings (removed):</p>
+    <ul>
+    <li>New cribbageCpuNames storage map, keyed per player + difficulty, with lazy migration of any existing global cpuName value.</li>
+    <li>Personalize prompt appears only the first time a pair is played; returning games silently reapply the saved name, with a "(change?)" link to edit or clear it later.</li>
+    <li>Clicking into the name field pauses the auto-continue entirely; 7s idle nudges the player once, repeats once, then falls back to the canonical default and starts the game — typing at any point cancels the nudges and reveals an explicit Start button.</li>
+    <li>Cleanup on both the 12-player LRU cap and explicit player deletion, so the name map never accumulates stale entries.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.82</span> Dedupe win-hole formula and starter-hole spacing constant</h2>
+      <div class="cl-date">July 27, 2026</div>
+    </div>
+    <p>Code-review follow-up: hoist the win-hole x formula into a shared _winHoleX() used by both _boardXY() and initBoard(), and collapse _startHoleXY()'s two identical pairSpread/rowOffPlayer constants into one, removing duplication that risked silent drift between the drawn hole and the peg's actual resting position.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.81</span> Add the Mac app to the BBB release ritual</h2>
+      <div class="cl-date">July 27, 2026</div>
+    </div>
+    <p>Folds the standalone macOS wrapper (main.swift &rarr; Simply Cribbage.app) into the same version-bump ritual as iOS from now on, rather than treating it as separately-pinned, uncommitted work:</p>
+    <ul>
+    <li>Simply Cribbage.app/Contents/Info.plist now carries a real version (CFBundleShortVersionString/CFBundleVersion mirroring iOS's marketing version and build number) instead of a static "1.0" placeholder that macOS's standard About panel was displaying verbatim.</li>
+    <li>main.swift is committed for the first time, including everything accumulated this session: WKWebView autoresizing + black background on resize, the "Simply Cribbage" rename (window title + menu items), and a #macapp URL-fragment flag passed to the loaded page so cribbage.html can apply one Mac-only CSS fix (forcing a true black body background regardless of window size, fixing the "background doesn't extend through the buttons" report) without affecting iOS.</li>
+    <li>.gitignore's bundle-ignore pattern updated to match the bundle's new name (Cribbage.app &rarr; Simply Cribbage.app, renamed earlier this session) — the stale pattern would have stopped matching and made the built bundle show up as an untracked directory.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.80</span> Fix board label centering and starter-hole placement/spacing</h2>
+      <div class="cl-date">July 27, 2026</div>
+    </div>
+    <ul>
+    <li>Fixed cross-browser SVG text vertical centering: dominant-baseline: central has inconsistent WebKit/Safari support (looked correct in desktop Chromium preview, misaligned on real iOS device). Replaced with a dy="0.35em" offset on every board number label (10-120, 60, 121) — the standard cross-browser-reliable technique, affects both iPad and iPhone since it's a rendering-correctness fix, not a device-specific design choice.</li>
+    <li>iPhone-only: starter peg holes now sit on each player's own track row instead of floating in a shared middle zone between both tracks (iPad's centered-diamond design is unchanged, gated behind the existing width&gt;=700 breakpoint).</li>
+    <li>iPad: nudged the opponent's starter-hole pair a bit closer to its own track than the player's pair, per request. Along the way, fixed a real bug this introduced: the same offset variable was controlling both the row-distance AND the spacing between the two dots within a pair, so adjusting one broke the other (comp's pair briefly had different internal spacing than player's). Decoupled into separate pairSpread/rowOff variables — both pairs now have identical internal spacing, confirmed via direct coordinate and on-screen measurement.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.79</span> Make post-game coaching tips more robust (backlog #31)</h2>
+      <div class="cl-date">July 23, 2026</div>
+    </div>
+    <ul>
+    <li>Fixed a dead "End-game" tip category: its guard was <code>!G.pScore &gt;= 121</code>, which due to operator precedence always evaluated false (<code>!G.pScore</code> &rarr; false for any nonzero score, then <code>false &gt;= 121</code> &rarr; false). This category could never fire.</li>
+    <li>De-ternaried two falsely-exclusive pairs (pegging gifts vs. danger-leads, weak-crib vs. opponent-crib-strong) into independent checks so both can surface in the same game when both are true, instead of arbitrarily picking one.</li>
+    <li>Added two new categories reusing already-tracked <code>pegPlays</code> data: go_efficiency (Go-bonus point comparison) and lead_five (flags repeatedly leading a 5 to open a count, a classic beginner mistake).</li>
+    <li>Added a loadStats()/saveStats()-backed anti-repeat rotation (<code>lastCoachTips</code>) so whichever tips were shown last game get deprioritized this game when more eligible categories exist than fit in the 5-tip cap — directly fixes "the same tip every time."</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.78</span> Increase peg-hole visibility across the board (backlog #30)</h2>
+      <div class="cl-date">July 23, 2026</div>
+    </div>
+    <ul>
+    <li>Darkened/increased opacity of the brd-hole radial gradient's mid and rim stops (0.92&rarr;0.99, 0.58&rarr;0.9) so holes read as more solid against the board instead of letting the wood texture show through.</li>
+    <li>Strengthened the drop-shadow under every straight/arch hole (opacity 0.48&rarr;0.7, radius 4.7&rarr;5).</li>
+    <li>Gave the starter-hole diamond and the 121 win-hole marker the same treatment: added a matching drop-shadow (previously they had none) and darkened their fill circles to match.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.77</span> Shift the 121 win-hole cluster closer to hole 120</h2>
+      <div class="cl-date">July 23, 2026</div>
+    </div>
+    <p>Moved the "121" text label and its peg-hole circle together (same relative offset preserved) 15 units closer to hole "120" — the cluster was sitting a bit too close to the board's left/bottom edge. Gap to hole 120 shrinks from ~40 to ~25, gap from the divider line grows from ~6 to ~21.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.76</span> Unify peg and player-chip colors on primary red/blue</h2>
+      <div class="cl-date">July 23, 2026</div>
+    </div>
+    <p>Player/comp board pegs (bpeg-p/c-front/back) and the you-card/cpu-card chip left-border accent now share the exact same colors instead of two independently-tuned blues and reds: primary blue #2266ee (was chip #4488ee, peg #5aa0ff) and primary red #ee2626 (was chip #e05050, peg #ff5a5a), with proportionally darker #1a4db3/#b31d1d for the trailing peg. Everything else that happens to reuse the old blue/red (progress bars, glow animations, analyzer charts, message log, card-suit-red rendering) is intentionally left untouched — scoped to just the peg/chip identity-color pairing per explicit request.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.75</span> Relocate pegging holes into the arch + reclaim starter-hole space</h2>
+      <div class="cl-date">July 23, 2026</div>
+    </div>
+    <ul>
+    <li>Redesign the "2 starter holes per player" as a single shared 4-hole diamond cluster centered between the two outbound tracks (comp/player), in the open space between the start position and hole #1 — mirroring how the 121 win-hole marker is centered between the two inbound tracks. Left/right symmetric pairs (comp upper, player lower), matching the same horizontal flow direction as the numbered pegging holes instead of stacking vertically within one row's channel.</li>
+    <li>Both of a player's actual pegs (front/back) now render into two distinct holes of that cluster at game start via a new _startHoleXY() helper, shared by both the hole-drawing code and the peg-placement code so they can never drift apart. The old unmarked single start point (x=30, both pegs stacked identically) is no longer used.</li>
+    <li>Starter holes now use the same ringed style and size as the 121 win-hole marker (accent-color ring + dark inset), replacing the smaller straight-track-style holes from the initial pass.</li>
+    <li>Recentered the "60" label at the arch's true apex, centered the 121 win-hole's peg-hole between hole "120" and its own label, and switched all board number labels to true SVG dominant-baseline centering instead of a manual pixel-offset fudge.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.74</span> Polish arch-board label alignment + relocate win-hole marker</h2>
+      <div class="cl-date">July 23, 2026</div>
+    </div>
+    <ul>
+    <li>Recenter the "60" label at the arch's true apex instead of score-60's slightly off-center angle.</li>
+    <li>Move the "121" win-hole marker's peg-hole centered between hole "120" and its own label, with the label sitting just right of the board's divider line, closer to the hole.</li>
+    <li>Switch board number labels (10-120, 60, 121) to true SVG dominant-baseline centering instead of a manual pixel-offset fudge, so every label sits exactly on its row's centerline and the 121 label/hole align precisely.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.73</span> Relocate pegging holes into the arch + reclaim starter-hole space</h2>
+      <div class="cl-date">July 22, 2026</div>
+    </div>
+    <ul>
+    <li>Move scores 56-65 onto the arch (real holes, replacing the old two-phase teleport animation in _movePeg) instead of the straight track being purely decorative there.</li>
+    <li>Reindex the remaining 55 straight holes per lane to flush against the arch, freeing space at both the start (outbound) and win-hole (inbound) ends.</li>
+    <li>Add 2 stacked starter holes per player in the freed start-zone.</li>
+    <li>Relocate the shared 121 win-hole marker into the freed inbound-side space.</li>
+    <li>Bolder board number labels (larger font-size + stroke for weight).</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.72</span> Fix swipe-play ghost card, peg arch scaling, automation hot-toggles + UI polish</h2>
+      <div class="cl-date">July 22, 2026</div>
+    </div>
+    <ul>
+    <li>Discard/pegging swipe-to-play: the card element was reused (not rebuilt) by renderPlayerCards()'s pegging fast-path, so resetting its drag transform with the CSS transition still enabled produced a visible slide-back before it dimmed into "played" state. Now resets instantly (transition disabled for the whole reset-and-play step), leaving only the intended dim/collapse animation.</li>
+    </ul>
+    <ul>
+    <li>Peg arch-crossing animation (60/61 lane transition): the two-phase animation's fixed waypoint at the arch's apex never multiplied by the board's dynamic scale factor (window._bhK), unlike every other board coordinate in the file. At typical rendered sizes (_bhK ~1.73 measured live) the waypoint was off by roughly half its correct offset. Now scales correctly with the board.</li>
+    </ul>
+    <ul>
+    <li>AUTO_DEAL, AUTO_DISCARD, and AUTO_CONTINUE were only checked once, at the moment their delay timers were scheduled — toggling a setting off during the wait didn't stop the pending auto-action from firing anyway. All three now re-check their current value when the timer actually fires.</li>
+    </ul>
+    <ul>
+    <li>New Game screen: shrank the name-input box, capped the description and Fun Facts text to a comfortable reading width instead of stretching full width on iPad, and removed the card-style background so that text floats directly on the black surface like other elements.</li>
+    </ul>
+    <ul>
+    <li>Settings &gt; Sound: renamed "Full" to "On" (the middle "Minimal" option was already removed, leaving an odd Off/Full pairing).</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.71</span> Add "play a card" stall reminder + fix resume-game timer gap</h2>
+      <div class="cl-date">July 21, 2026</div>
+    </div>
+    <p>New: after 6 seconds of the player not acting during their peg turn, the player's score chip gets a soft gold glow (2.5s dim-to-bright, 2.5s back, using the app's existing accent color) as a gentle nudge to play a card. Clears on card play, or when the existing 90-second "It's your turn" modal takes over. Enabled in all difficulties, including Pro.</p>
+    <p>Also fixed a real, pre-existing gap found while verifying the above: resumeSavedGame()'s peg-phase/player's-turn branch set buttons directly but never called refreshPegButtons(), so neither the new nudge nor the pre-existing 90-second "It's your turn" modal ever armed after resuming a game — only after a turn that started fresh mid-session.</p>
+  </section>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.2.70</span> Fix peg-row's own overflow-clip boundary + stale zone-width constant</h2>
+      <div class="cl-date">July 21, 2026</div>
+    </div>
+    <p>_fitPegRow() previously translated the whole active-series wrapper as a rigid unit to keep the trailing card clear of the board/row, which could drag the group's own leading boundary card too close to (or past) the previous completed group. Now caps the shift to preserve a minimum boundary gap, using the boundary card's own measured position rather than the wrapper's — and the boundary check now runs independently of whether a rightward (overflow) correction is needed at all, since the natural flex-end packing of a short trailing group could leave the boundary gap broken even when the row/board clearance was already fine.</p>
+    <p>Removed the "_preCount" FLIP settle-animation (_pegFlip/_lastSeriesKeys): it animated a newly-dimmed card from its old mid-pegging (wrapper-packed) position to its new bare-card position, but that old position was itself an artifact of flex-end packing in a mostly-empty wrapper, not a meaningful position worth animating from — this was the direct cause of a small but real "card slides into place" visual reported repeatedly.</p>
+    <p>Separately, _fitPegRow's own corrective transform was being applied with the CSS transition still active, so even a fully correct correction visibly slid into place over ~130ms. It now applies instantly (transition disabled for the whole measure-and-correct pass), eliminating that residual movement too.</p>
+  </section>
+</div>
+</body>
+</html>
