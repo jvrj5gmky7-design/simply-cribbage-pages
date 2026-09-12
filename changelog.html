@@ -139,13 +139,25 @@
     <div class="suits">&#9824; &#9829; &#9827; &#9830;</div>
     <div class="kicker">Simply Cribbage</div>
     <h1>Change Log</h1>
-    <div class="updated">Last updated: September 11, 2026 &middot; App version 2.3.3</div>
+    <div class="updated">Last updated: September 11, 2026 &middot; App version 2.3.4</div>
   </header>
 
   <div class="tldr">
     <span class="label">The short version</span>
     Every release of Simply Cribbage, newest first, with what actually changed &mdash; not just marketing copy. Most releases are small fixes and polish; that's normal for an actively-maintained app.
   </div>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.3.4</span> Full-screen crib reveal, starter-card fix, restored modal borders</h2>
+      <div class="cl-date">September 11, 2026</div>
+    </div>
+    <ul>
+    <li>Fixed a starter card that could sit within a few pixels of the screen edge during the hand-count reveal on the narrowest iPhone sizes (15/15 Pro, 17/17 Pro) — the layout math that keeps everything on-screen wasn't running on phone widths whenever a starter card was involved</li>
+    <li>The crib count screen now fills the entire display, top to bottom, instead of stopping short of the opponent's score and the bottom toolbar — both hands are already cleared by that point, so there's nothing left to leave exposed</li>
+    <li>Restored the subtle floating-card border on the Hand Breakdown detail view, Reset Statistics, and the App Lock consent screen — a CSS rule left over from the previous release's style cleanup had accidentally flattened all three back to solid black</li>
+    </ul>
+  </section>
 
   <section>
     <div class="cl-head">
