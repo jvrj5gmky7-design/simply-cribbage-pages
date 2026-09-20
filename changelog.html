@@ -139,13 +139,27 @@
     <div class="suits">&#9824; &#9829; &#9827; &#9830;</div>
     <div class="kicker">Simply Cribbage</div>
     <h1>Change Log</h1>
-    <div class="updated">Last updated: September 20, 2026 &middot; App version 2.3.20</div>
+    <div class="updated">Last updated: September 20, 2026 &middot; App version 2.3.21</div>
   </header>
 
   <div class="tldr">
     <span class="label">The short version</span>
     Every release of Simply Cribbage, newest first, with what actually changed &mdash; not just marketing copy. Most releases are small fixes and polish; that's normal for an actively-maintained app.
   </div>
+
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.3.21</span> Correctness fixes following code review</h2>
+      <div class="cl-date">September 20, 2026</div>
+    </div>
+    <ul>
+    <li>Fixed a scoring edge case that could occasionally miscount the crib estimate shown during discard</li>
+    <li>Fixed several rare timing issues where starting a New Game at exactly the wrong moment could leave the new game in a bad state</li>
+    <li>Manual Count: fixed a rare case where a win could be declared with an incorrect final score</li>
+    <li>Count reveal windows now stay correctly positioned if you resize the window while one is open</li>
+    <li>Small fixes to swipe-to-dismiss on modals and a couple of rare cosmetic glitches</li>
+    </ul>
+  </section>
 
   <section>
     <div class="cl-head">
