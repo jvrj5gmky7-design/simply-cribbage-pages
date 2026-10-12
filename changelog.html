@@ -139,7 +139,7 @@
     <div class="suits">&#9824; &#9829; &#9827; &#9830;</div>
     <div class="kicker">Simply Cribbage</div>
     <h1>Change Log</h1>
-    <div class="updated">Last updated: October 11, 2026 &middot; App version 2.3.52</div>
+    <div class="updated">Last updated: October 12, 2026 &middot; App version 2.3.53</div>
   </header>
 
   <div class="tldr">
@@ -147,6 +147,17 @@
     Every release of Simply Cribbage, newest first, with what actually changed &mdash; not just marketing copy. Most releases are small fixes and polish; that's normal for an actively-maintained app.
   </div>
 
+  <section>
+    <div class="cl-head">
+      <h2><span class="cl-ver">2.3.53</span> iPad window resizing, and the six-card hand fits small screens</h2>
+      <div class="cl-date">October 12, 2026</div>
+    </div>
+    <ul>
+    <li>iPad (iPadOS 27): resizing the app window now works properly. The played cards and the message log stay in place as the window changes size, the title steps aside for the system window buttons in narrow windows, small windows stay playable, and the window can no longer be made smaller than a playable size (375 &times; 660 points)</li>
+    <li>Fixed: in iPad windows up to about 500 points wide the newest message could slide behind the buttons at the bottom. The game now makes room for it, hiding the older messages (and, in the shortest windows, the pegging board) a little sooner. Full-size iPad, larger windows, iPhone and Mac are unchanged</li>
+    <li>Fixed: on the smallest iPhones (iPhone SE, 12 mini, 13 mini) and in the smallest iPad window, the last card of your six-card hand ran to the very edge of the screen. The hand now fans in a little tighter until you discard, then returns to its normal spacing. Larger screens are unchanged</li>
+    </ul>
+  </section>
   <section>
     <div class="cl-head">
       <h2><span class="cl-ver">2.3.52</span> iPad pegging board shown in full again</h2>
